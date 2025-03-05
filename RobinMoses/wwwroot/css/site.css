@@ -1,0 +1,423 @@
+
+html {
+  font-size: 14px;
+}
+
+h1 {
+    color: rebeccapurple;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+    .filter {
+        display: grid !important;
+        align-items: flex-start;
+        float: left;
+        margin-bottom: 25px;
+    }
+    .centerBlogButton {
+        display: flex;
+        width: 100%;
+        float: left;
+        text-align: right;
+        margin: 20px;
+    }
+    .blogposts img {
+        max-width: 25rem;
+        max-height: auto;
+    }
+    .card-body img {
+        max-width: 22.5rem;
+        max-height: auto;
+    }
+    #nachos {
+        width: 80% !important;
+        height: auto !important;
+    }
+
+    #nachopatio {
+        width: 80%;
+        height: auto;
+    }
+}
+
+h2 {
+    color: saddlebrown;
+}
+
+body {
+    background-image: url('../images/rainbow.jpg');
+    font-family: 'Lato';
+    text-shadow: 1px 1px white;
+    font-size: 18px;
+    background-attachment: fixed;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: mediumpurple;
+}
+
+h3 {
+    color: purple;
+}
+
+/*For nav bar*/
+a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
+a:hover {
+        color: white;
+        text-shadow: 4px 4px black;
+}
+ul {
+    list-style-type: none;
+}
+span ul {
+    list-style-type: none;
+    text-align:center;
+    margin: auto;
+    padding: 0;    
+    display: inline-block;
+}
+.blogposts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: space-evenly;
+    width: 80%;
+    flex: 0 0 calc(50% - 1rem);
+}
+@media screen and (max-width: 468px) and (min-width: 0px) {
+    .navbar-toggler {
+        display: none;
+    }
+    .logo img {
+        position: relative !important;
+        max-width: 102px !important;
+        height: auto !important;
+        display: inline;
+        top: 8px !important;
+        right: 5px !important;
+    }
+    .phone-toggler {
+        position: sticky;
+        display: contents !important;
+    }
+}
+@media (max-width: 260px) {
+    .logo img {
+        display: none !important;
+    }
+}
+.phone-toggler {
+    position: sticky;
+    display: none;
+    top: 0;
+    left: 0;
+}
+.phone {
+    color: saddlebrown !important;
+    text-shadow: 2px 2px white !important;
+}
+.navbar-toggler {
+    position: absolute;
+    top: 20px;
+    right: 160px;
+
+}
+.navbar {
+    position: center;
+    display: flex;
+    z-index: 1000;
+    justify-content: center;
+}
+.logo {
+    position: absolute;
+    max-height: auto;
+    max-width: auto;
+    top: 0;
+    right: 0;
+    z-index: 1008;
+}
+@media (min-width: 992px) {
+    .navbar {
+        margin-top: 6px;
+    }
+}
+@media (max-width: 992px) {
+    .google-map {
+        max-width: 86%;
+        max-height: auto;
+        padding-bottom: 50%;
+        position: relative;
+        border-style: inset;
+    }
+    .google-map iframe {
+        max-width: 100%;
+        max-height: auto;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+}
+@media screen and (max-width: 1696px) {
+    .vertical-bar {
+        display: none;
+    }
+    ul li:hover .dropdown {
+        position: initial !important;
+        display: grid !important;
+    }
+    .navbar {
+        background-image: url("../images/purple.jpg") !important;
+        background-size: cover;
+        background-position: center;
+        justify-content: center;
+        align-content: baseline;
+        align-items: baseline;
+        z-index: 8;
+    }
+}
+@media screen and (max-width: 1280px) and (min-width: 992px) {
+    .logo {
+        display: none;
+    }
+}
+.navbar-collapse {
+    display: grid;
+    justify-content: center;
+}
+.nav-item {
+    justify-content: center;
+    align-items: center;
+}
+#MenuEdit {
+    position: absolute;
+    width: 1100px;
+    height: 250px;
+    z-index: 15;
+    top: 40%;
+    left: 50%;
+    margin: -100px 0 0 -400px;
+}
+#navi li {
+
+    float: right;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+}
+
+#navi {
+    background-image: url("../images/purple.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    align-content: baseline;
+    height: 76px;
+    position: relative;
+}
+#nachos {
+    max-width: 50%;
+    max-height: auto;
+    
+}
+#nachopatio {
+    max-width: 60%;
+    max-height: auto;
+}
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown{
+    widows: revert-layer;
+    position: absolute;
+    display: none;
+}
+
+    ul li a:hover {
+        /*background: #757575*/
+    }
+
+ul li:hover ul.dropdown{
+    display:flow-root;
+}
+
+/*For contact page columns*/
+/* Create three unequal columns that floats next to each other  (Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_three_columns_unequal) */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left, .right {
+    width: 50%;
+}
+
+.middle {
+    width: 33.33%;
+}
+
+.leftspc{
+    width:70%
+}
+
+.rightspc {
+    width: 30%
+}
+
+.drinkcolumn {
+    float: left;
+    padding: 10px;
+}
+
+.drinkleft{
+    width: 70%
+}
+
+.drinkright{
+    width: 30%
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*For google map embed*/
+/*.google-map {
+    padding-bottom: 50%;
+    position: relative;
+    border-style: inset;
+}
+
+.google-map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}*/
+
+#RobinMosesBlue {
+    background-color: #3EC6EE;
+    color: white;
+}
+
+/*Aligning images center*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.centerBlogButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    text-align:center;
+}
+.home {
+    height: auto !important;
+    width: 80% !important;
+}
+.btn-primary {
+    background-color: #3EC6EE;
+}
+.filter {
+    display: contents;
+}
+.img-border {
+    border: 2px solid;
+    border-color: white;
+}
+
+/*.dot-table td {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+    .dot-table td:first-child:after {
+        content: " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+    }*/
+
+/*FoodMenu*/
+.foodmenu{
+    column-count: 2;
+    page-break-inside:avoid;
+    display: inline-block;
+}
+
+.foodmenutitle {
+    text-align: center;
+    font-weight: 650;
+    font-size: 40px;    
+}
+
+.drinkmenu {
+    column-count: 2;
+    page-break-inside: avoid;
+    display: inline-block;
+    width: 80%
+}
+
+.drinkmenutitle {
+    text-align: left;
+    font-weight: 650;
+    font-size: 40px;
+}
+
+.liquormenu {
+    
+    page-break-inside: avoid;
+    display: inline-block;
+    
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+    
+}
+
+.cardpicture{
+    width:275px;
+    height:250px
+}
+
+.containerGBT {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.spccard {
+    width: 700px;
+    padding: 20px;
+    border-radius: 5px 20px 20px 5px;
+}

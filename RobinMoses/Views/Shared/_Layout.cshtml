@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<AppUser> signInManager
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RobinMoses</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RobinMoses.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+    <header id="navi">
+        <nav class="navbar navbar-expand-lg justify-content-center navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-bs-controls="navbarNav" aria-bs-expanded="false" aria-bs-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div id="phonetoggle">
+                <button class="phone-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-bs-controls="navbarNav" aria-bs-expanded="false" aria-bs-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav" style="text-align: justify;">
+                            <li class="nav-item">
+                                <a asp-controller="Data" asp-action="Index">Collections</a>
+                            </li>
+                            <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+                            <li class="nav-item"><a href="https://www.youtube.com/robinmosesnailart">YouTube</a></li>
+                            <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+                            <li class="nav-item"><a href="https://robinmosesnailart.com/collections/frontpage">Nail Art Brushes</a></li>
+                            <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+                            <li class="nav-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+                            <li class="nav-item"><a asp-controller="Home" asp-action="AboutUs">About Robin Moses</a></li>
+                            <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+                            <li class="nav-item"><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                            <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+
+                            <li>
+                                <a href="#" style="color:antiquewhite; cursor:context-menu">Order Now</a>
+                                <ul class="dropdown">
+                                    <li><a href="https://robinmosesnailart.com/products/get-a-set-of-all-3-brushes-one-wand-one-unicorn-and-one-witchy" style="color:antiquewhite">| All-In-One |</a></li>
+                                    <li><a href="https://robinmosesnailart.com/products/set-of-both-brushes" style="color:antiquewhite">| Wand + Unicorn |</a></li>
+                                    <li><a href="https://robinmosesnailart.com/products/the-witchy-robin-moses-nail-art-brush" style="color:antiquewhite">| The Witchy |</a></li>
+                                </ul>
+                            </li>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                        <li class="nav-item vertical-bar" style="color: antiquewhite; text-shadow: 2px 2px black;">|</li>
+                            // Signed-in user - Log Out button and username
+                            <li class="nav-item">
+                                <form method="post" asp-action="Logout" asp-controller="Account">
+                                    <span style="color: antiquewhite; text-shadow: 2px 2px black">@User.Identity.Name</span>
+                                <input type="submit" value="Log Out" style="text-shadow: 2px 2px black" id="RobinMosesBlue" class="btn btn-primary" />
+                                </form>
+                            </li>
+                        }
+                      
+                        </ul>
+                    </div>
+             
+            </nav>
+        <div style="float: right" class="logo">
+            <a asp-controller="Home" asp-action="Index"><img src="~/images/rmlogo.png" style="width: 125px"></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

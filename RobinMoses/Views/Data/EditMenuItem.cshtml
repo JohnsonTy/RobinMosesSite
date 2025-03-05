@@ -1,0 +1,64 @@
+﻿@model MenuItem
+
+@{
+    ViewBag.Title = "Edit Menu Item";
+}
+
+<form method="post">
+    <h1 class="display-4" style="text-align: center;">Edit Item</h1>
+    <br>
+    <div class="container" style="text-align: justify">
+        <div class="center" id="MenuEdit">
+        <div asp-validation-summary="All"></div>
+        <div class="mb-1 row">
+            <input name="ItemId" value="@Model.ItemId" hidden>
+            <label for="Name" class="col-md-2 col-form-label">Item Name:</label>
+            <div class="col-sm-10">
+                <input id="Name" name="Name" class="col-md-7" value="@if(Model!=null)
+                @Model.Name">
+            </div>
+        </div>
+        <div class="mb-1 row">
+                <label for="Category" class="col-md-2 col-form-label">Item category name:</label>
+                <select id="Category" name="Category" class="custom-select" style="width: 200px">
+                    <option selected>Choose Category</option>
+                    <option value="Botanas">Botanas</option>
+                    <option value="Specialties">Specialties</option>
+                    <option value="Soup">Soup</option>
+                    <option value="Burritos">Burritos</option>
+                    <option value="Fajitas">Fajitas</option>
+                    <option value="Combos">Combos</option>
+                    <option value="Tacos">Tacos</option>
+                    <option value="Enchiladas">Enchiladas</option>
+                    <option value="Salads">Salads</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Favorites">Favorites</option>
+                    <option value="Shrimp">Shrimp</option>
+                    <option value="Sides">Sides</option>
+                </select>
+        </div>
+
+        <div class="mb-1 row">
+            <label for="Price" class="col-md-2 col-form-label">Price:</label>
+            <div class="col-sm-3">
+                <input id="Price" name="Price" class="col-md-7" value="@if(Model!=null){
+                @Model.Price}">
+            </div>
+        </div>
+
+
+        <div class="row-2 col-8 p-2">
+            <label for="Description" class="form-label">Description:</label>
+            <textarea id="Description" name="Description" class="form-control" rows="3" cols="6">@if (Model != null)
+                {
+                    @Model.Description
+                }</textarea>
+        </div>
+        <br>
+        <div class="row-md-1">
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+
+        </div>
+    </div>
+</form>

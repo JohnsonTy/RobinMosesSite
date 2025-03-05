@@ -1,0 +1,267 @@
+﻿﻿@{
+    ViewData["Title"] = "Drink Menu";
+}
+
+<h1 class="display-4 text-center">Drink Menu</h1>
+<div class="container drinkcolumn drinkleft" style="float:left">
+    @if (User.IsInRole("Admin"))
+    {
+        <a btn href="/Menu/AddDrink" id="RobinMosesBlue" class="btn btn-outline-primary btn-lg active center" role="button" aria-pressed="false">Create Drink Item</a>
+        <br>
+    }
+    <br />
+
+    <h3 class="drinkmenutitle">  Margaritas  </h3>
+    <div class="drinkmenu">
+        <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "Margaritas")
+                {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name &nbsp; &nbsp; &#x2022 &nbsp; &nbsp; @menuItem.Price</li>
+                    <li><i>@menuItem.Description</i></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                    <br />
+            </div>
+                }
+            }
+    </ul>
+</div>
+
+<h3 class="drinkmenutitle">  Specialty Drinks  </h3>
+<div class="drinkmenu">
+    <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "SpecialDrinks")
+                {
+                <div style="break-inside:avoid">
+                <li style="font-weight:600"> @menuItem.Name  &nbsp; &nbsp; &#x2022 &nbsp; &nbsp;  @menuItem.Price</li>
+                <li><i>@menuItem.Description</i></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                    <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                    <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                <br />
+        </div>
+                }
+            }
+        </ul>
+    </div>
+
+<h3 class="drinkmenutitle">  The Classics  </h3>
+<div class="drinkmenu">
+    <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "ClassicDrinks")
+                {
+                <div style="break-inside:avoid">
+                <li style="font-weight:600"> @menuItem.Name  &nbsp; &nbsp; &#x2022 &nbsp; &nbsp;  @menuItem.Price</li>
+                <li><i>@menuItem.Description</i></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                    <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                    <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                <br />
+        </div>
+                }
+            }
+        </ul>
+    </div>
+
+<h3 class="drinkmenutitle">  Beers  </h3>
+<div class="drinkmenu">
+    <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "Beers")
+                {
+                <div style="break-inside:avoid">
+                <li style="font-weight:600"> @menuItem.Name  &nbsp; &nbsp; &#x2022 &nbsp; &nbsp;  @menuItem.Price</li>
+                <li><i>@menuItem.Description</i></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                    <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                    <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                <br />
+        </div>
+                }
+            }
+        </ul>
+    </div>
+
+<h3 class="drinkmenutitle">  Wines  </h3>
+<div class="drinkmenu">
+    <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "Wines")
+                {
+                <div style="break-inside:avoid">
+                <li style="font-weight:600"> @menuItem.Name  &nbsp; &nbsp; &#x2022 &nbsp; &nbsp;  @menuItem.Price</li>
+                <li><i>@menuItem.Description</i></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                    <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                    <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                <br />
+        </div>
+                }
+            }
+        </ul>
+    </div>
+
+<h3 class="drinkmenutitle">  Non-Alcoholic  </h3>
+<div class="drinkmenu">
+    <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "NonAlcoholic")
+                {
+                <div style="break-inside:avoid">
+                <li style="font-weight:600"> @menuItem.Name  &nbsp; &nbsp; &#x2022 &nbsp; &nbsp;  @menuItem.Price</li>
+                <li><i>@menuItem.Description</i></li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                    <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                    <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                <br />
+        </div>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="container drinkcolumn drinkright">
+    <h3 class="drinkmenutitle">  Tequilas  </h3>
+    <div class="liquormenu">
+        <ul style="list-style-type: none">
+            @foreach (var menuItem in Model)
+            {
+                if (menuItem.Category == "Tequila")
+                {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name | @menuItem.Price</li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                        }
+                    <br />
+            </div>
+                }
+            }
+    </ul>
+
+    <h3 class="drinkmenutitle">  Vodkas  </h3>
+    <div class="liquormenu">
+        <ul style="list-style-type: none">
+                @foreach (var menuItem in Model)
+                {
+                    if (menuItem.Category == "Vodka")
+                    {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name | @menuItem.Price</li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                            }
+                    <br />
+            </div>
+                    }
+                }
+    </ul>
+
+    <h3 class="drinkmenutitle">  Rums  </h3>
+    <div class="liquormenu">
+        <ul style="list-style-type: none">
+                    @foreach (var menuItem in Model)
+                    {
+                        if (menuItem.Category == "Rum")
+                        {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name | @menuItem.Price</li>
+                                @if (User.IsInRole("Admin"))
+                                {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                                }
+                    <br />
+            </div>
+                        }
+                    }
+    </ul>
+
+    <h3 class="drinkmenutitle">  Whiskeys  </h3>
+    <div class="liquormenu">
+        <ul style="list-style-type: none">
+                        @foreach (var menuItem in Model)
+                        {
+                            if (menuItem.Category == "Whiskey")
+                            {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name | @menuItem.Price</li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                                    }
+                    <br />
+            </div>
+                            }
+                        }
+    </ul>
+
+    <h3 class="drinkmenutitle">  Gins  </h3>
+    <div class="liquormenu">
+        <ul style="list-style-type: none">
+                            @foreach (var menuItem in Model)
+                            {
+                                if (menuItem.Category == "Gin")
+                                {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name | @menuItem.Price</li>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                                        }
+                    <br />
+            </div>
+                                }
+                            }
+    </ul>
+
+    <h3 class="drinkmenutitle">  Liqueurs  </h3>
+    <div class="liquormenu">
+        <ul style="list-style-type: none">
+                                @foreach (var menuItem in Model)
+                                {
+                                    if (menuItem.Category == "Liqueur")
+                                    {
+                    <div style="break-inside:avoid">
+                    <li style="font-weight:600"> @menuItem.Name | @menuItem.Price</li>
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                        <a class="btn btn-danger" href="/Menu/DeleteMenuItem?ItemId=@menuItem.ItemId" role="button">Delete</a>
+                        <a class="btn btn-primary" href="/Menu/EditMenuDrinkItem?ItemId=@menuItem.ItemId" role="button">Edit</a>
+                                            }
+                    <br />
+            </div>
+                                    }
+                                }
+    </ul>
+</div>

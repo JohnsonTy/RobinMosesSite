@@ -1,0 +1,41 @@
+﻿@model BlogPost
+@{
+    ViewBag.Title = "Add Blog Post";
+}
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<form asp-action="Add" asp-controller="Blog" method="post" enctype="multipart/form-data">
+    <div class="container" style="text-align: justify">
+        <div class="center" id="MenuEdit">
+            <h1 class="display-4">Blog Post</h1>
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Title">Blog Title:</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Tag">Blog Tags:</label>
+        <input asp-for="Tag" name="Tag" class="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="file">Upload Photo:</label>
+        <input type="file" id="file" name="file" />
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Text">Blog Content:</label>
+        <input asp-for="Text" class="form-control" />
+    </div>
+
+
+    <div class="row-md-1">
+        <button type="submit" class="btn btn-primary">Post</button>
+
+    </div>
+</form>

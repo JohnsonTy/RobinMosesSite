@@ -1,0 +1,43 @@
+﻿@model BlogPost
+@{
+    ViewBag.Title = "Blog Post";
+}
+
+@if (Model != null)
+{
+    <div class="col-2">
+
+    </div>
+    <div class="row py-5" style="">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title" style="text-align: center">@Model.Title</h1>
+
+                    @if (Model.Photo != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.Photo);
+                        var imgSrc = String.Format($"data:image/gif;base64,{base64}");
+                        <p><img src="@imgSrc" width="400" /></p>
+                    }
+                
+                    <i>Date: @Model.Date</i>
+                    <br>
+                    <i>Tags: @Model.Tag</i>
+                    <hr>
+
+                    <p class="card-text">@Model.Text</p>
+                    
+                   
+                </div>
+                @if (User.IsInRole("Admin"))
+                {
+                    <p>
+                        <a href="/Blog/Delete?blogId=@Model.PostId">Delete Blog Post</a>
+                    </p>
+                }
+                            
+            </div>
+        </div>
+    </div>
+}

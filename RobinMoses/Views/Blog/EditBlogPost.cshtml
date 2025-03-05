@@ -1,0 +1,39 @@
+﻿@model BlogPost
+@{
+    ViewBag.Title = "Edit Blog Post";
+}
+<form method="post">
+
+    <div asp-validation-summary="All"></div>
+    <h1 class="display-4" style="text-align: center;">Edit Item</h1>
+    <br>
+    <div class="container" style="text-align: justify">
+        <div class="center" id="MenuEdit">
+            <div class="mb-1 row">
+                <input name="PostId" value="@Model.PostId" hidden>
+                <div class="col-sm-10">
+                    <input id="Title" name="Title" class="col-md-7" value="@if(Model!=null)
+                    @Model.Title">
+                </div>
+            </div>
+            <label for="Tag" class="col-md-2 col-form-label">Tag: </label>
+            <div class="col-sm-10">
+                <input id="Tag" name="Tag" class="col-md-7" value="@if(Model!=null)
+                    @Model.Tag">
+            </div>
+
+            <div class="row-2 col-8 p-2">
+                <label for="Text" class="form-label">Description:</label>
+                <textarea id="Text" name="Text" class="form-control" rows="3" cols="6">@if (Model != null)
+                    {
+                        @Model.Text
+                    }</textarea>
+            </div>
+
+            <br>
+            <div class="row-md-1">
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+            </div>
+    </div>
+</form>

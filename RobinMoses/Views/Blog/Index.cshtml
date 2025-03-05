@@ -1,0 +1,80 @@
+﻿@model List<BlogPost>
+@{
+    ViewBag.Title = "Blog";
+}
+<h1 class="display-4" style="text-align:center">Chula's Blog</h1>
+@if (User.IsInRole("Admin"))
+{
+    <a btn href="/Blog/Add" id="RobinMosesBlue" class="centerBlogButton btn-outline-primary btn-lg active" role="button" aria-pressed="false">New Blog Post</a>
+}
+<div class="container">
+
+    @using (Html.BeginForm("Index", "Blog", FormMethod.Get))
+    {
+        <div class="filter">
+            <div class="centerBlogButton" style="float:left;">
+                <br>
+                <div class="justify-content-center">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="Title" value="@ViewBag.CurrentFilter" />
+                </div><br>
+                <div class="justify-content-center">
+                    <label for="content">Content:</label>
+                    <input type="text" id="text" name="Text" value="@ViewBag.CurrentFilter" />
+                </div><br>
+                <div class="justify-content-center">
+                    <label for="tag">Tag(s):</label>
+                    <input type="text" id="tag" name="Tag" value="@ViewBag.CurrentFilter" />
+                </div>
+                <br>
+                <input id="RobinMosesBlue" style="text-shadow: 1px 1px black;" type="submit" value="Filter" />
+            </div>
+        </div>
+    }
+    <br>
+    <div class="blogposts">
+    @foreach (var blogPost in Model)
+    {
+            <div class="col-lg-4 col-md-6 col-sm-8 mb-6" style="padding-left: 4rem;">
+                <div class="card" style="width: 25.07rem;">
+        
+                @if (blogPost.Photo != null){
+                    var base64 = Convert.ToBase64String(blogPost.Photo);
+                    var imgSrc = String.Format($"data:image/gif;base64,{base64}");
+                    <p><img src="@imgSrc" width="400" /></p>
+                 }
+
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center">@blogPost.Title</h5>
+                        <center>@blogPost.Date</center>
+                            <p class="card-text">
+                                @if(blogPost.Text.Length > 175){
+                                <span>@blogPost.Text.Substring(0, 175);</span> 
+                                }
+                                else{
+                                <span>@blogPost.Text;</span>
+                                }
+                            </p>
+                            <a href="/Blog/BlogPage?blogId=@blogPost.PostId" class="btn btn-primary center">See Full Post!</a>
+                            <br>
+                    <i>@blogPost.Tag</i>
+                </div>
+                @if (User.IsInRole("Admin"))
+                {
+                    <p>
+                        <a href="/Blog/Delete?blogId=@blogPost.PostId" class="btn btn-danger center">Delete Blog Post</a> 
+                        <br>
+                        <a href="/Blog/EditBlogPost?blogId=@blogPost.PostId" class="btn btn-secondary center">Edit Blog Post</a>
+                    </p>
+                }
+                </div>
+            </div>
+    }
+    </div>
+
+@*
+    TODO: ADD MENU TO THE RIGHT ONCE DATA ENTRY IS VIABLE
+    MAKE TITLES INTO LINKS
+    MAKE 'PUBLISHED IN' A LINK / SEARCH THING
+    ASK GABBY ABOUT HORIZONTAL TITLE CARDS
+*@
