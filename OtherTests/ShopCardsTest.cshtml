@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<h1 class="display-4" style="text-align:center; color: red;">Shop</h1>
+
+<div class="container">
+    <h2 style="text-align:center" class="py-3">Our Brushes</h2>
+
+    <div class="row align-items-start py-4">
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/shopfifyall.webp" alt="The Complete Set">
+                <div class="card-body">
+                    <h5 class="card-title">The Complete Set</h5>
+                    <p class="card-text">Get a Set of all 3 Brushes! One Wand, One Unicorn, and One NEW Witchy!<br>Regular price: $25.00</p>
+                    <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                        <input type="hidden" name="itemName" value="The Complete Set" />
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/shopfifytwo.webp" alt="The Wand and Unicorn Set">
+                <div class="card-body">
+                    <h5 class="card-title">The Wand and Unicorn Set</h5>
+                    <p class="card-text">Get a Set of Brushes! One Wand and One Unicorn!<br>Regular price: $20.00</p>
+                    <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                        <input type="hidden" name="itemName" value="The Wand and Unicorn Set" />
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/shopfifywitchy.webp" alt="The Witchy Brush">
+                <div class="card-body">
+                    <h5 class="card-title">The Witchy Brush</h5>
+                    <p class="card-text">The Witchy Robin Moses Nail Art Brush<br>Regular price: $10.00</p>
+                    <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                        <input type="hidden" name="itemName" value="The Witchy Brush" />
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/shopfifywand.webp" alt="The Wand Brush">
+                <div class="card-body">
+                    <h5 class="card-title">The Wand Brush</h5>
+                    <p class="card-text">The Wand Robin Moses Nail Art Brush<br>Regular price: $10.00</p>
+                    <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                        <input type="hidden" name="itemName" value="The Wand Brush" />
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/shopfifyunicorn.webp" alt="The Unicorn Brush">
+                <div class="card-body">
+                    <h5 class="card-title">The Unicorn Brush</h5>
+                    <p class="card-text">The Unicorn Robin Moses Nail Art Brush<br>Regular price: $10.00</p>
+                    <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                        <input type="hidden" name="itemName" value="The Unicorn Brush" />
+                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

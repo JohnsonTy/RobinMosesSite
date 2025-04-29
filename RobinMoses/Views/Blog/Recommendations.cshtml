@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Nail Art Recommendations";
+}
+
+<h2>Nail Art Recommendations</h2>
+
+<form id="recommendForm">
+    <input type="text" id="tags" placeholder="Enter tags">
+    <button type="submit">Get Recommendations</button>
+</form>
+
+<div id="results"></div>
+
+<script>
+    document.getElementById('recommendForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const tags = document.getElementById('tags').value;
+        const response = await fetch('/NailArt/Recommend', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ tags })
+        });
+        const prediction = await response.json();
+        document.getElementById('results').innerText = JSON.stringify(prediction);
+    });
+</script>

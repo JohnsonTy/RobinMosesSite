@@ -9,6 +9,7 @@ namespace RobinMoses.Controllers
     {
         IWebSiteRepo repository;
         WebDbContext context;
+        private List<string> cartItems;
         private readonly ILogger<HomeController> _logger;
       
         public DataController(IWebSiteRepo m)
@@ -17,11 +18,18 @@ namespace RobinMoses.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            return View(cartItems);
         }
 
 
-        public IActionResult Contact()
+        [HttpPost]
+        public IActionResult AddToCart(string itemName)
+        {
+            cartItems.Add(itemName);
+            return RedirectToAction("Index");
+        }
+        
+    public IActionResult Contact()
         {
             return View();
         }

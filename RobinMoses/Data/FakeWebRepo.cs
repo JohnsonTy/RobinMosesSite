@@ -20,13 +20,6 @@ namespace RobinMoses.Data
             return blogPost.PostId;
         }
 
-        public async Task<int> AddMenuItem(MenuItem menuItem)
-        {
-            menuItem.ItemId = menuItems.Count + 1;
-            menuItems.Add(menuItem);
-            return menuItem.ItemId;
-        }
-
         public Task<int> AddSpecialItem(SpecialItem specialItem)
         {
             throw new NotImplementedException();
@@ -38,14 +31,6 @@ namespace RobinMoses.Data
             var blogPost = blogPosts[blogId - 1];
             blogPosts.RemoveAt(blogId - 1);
             blogPost.PostId = 0;
-            return Task.FromResult(1);
-        }
-
-        public Task<int> DeleteMenuItem(int MenuId)
-        {
-            var MenuItem = menuItems[MenuId - 1];
-            menuItems.RemoveAt(MenuId - 1);
-            MenuItem.ItemId = 0;
             return Task.FromResult(1);
         }
 
@@ -69,22 +54,11 @@ namespace RobinMoses.Data
             throw new NotImplementedException();
         }
 
-        public List<MenuItem> GetMenuItem()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MenuItem> GetMenuItemByIdAsync(int id)
-        {
-            return Task.FromResult(menuItems[id - 1]);
-        }
-
         public List<SpecialItem> GetSpecItem()
         {
             throw new NotImplementedException();
         }
 
-        
         public Task<int> UpdateBlogPost(BlogPost blogPost)
         {
             blogPost.Title = "EditTest";

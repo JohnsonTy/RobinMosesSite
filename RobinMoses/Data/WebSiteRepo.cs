@@ -26,11 +26,6 @@ namespace RobinMoses.Data
             return await context.SaveChangesAsync();
         }
 
-        public async Task<int> AddMenuItem(MenuItem menuItem)
-        {
-            await context.AddAsync(menuItem);
-            return await context.SaveChangesAsync();
-        }
 
         public async Task<int> AddSpecialItem(SpecialItem specialItem)
         {
@@ -63,22 +58,6 @@ namespace RobinMoses.Data
             return context.SaveChangesAsync();
         }
 
-        public List<MenuItem> GetMenuItem()
-        {
-            return context.MenuItems.ToList();
-        }
-        public async Task<MenuItem> GetMenuItemByIdAsync(int id)
-        {
-            var item = await context.MenuItems.FindAsync(id);
-            return item ;
-        }
-
-        public Task<int> DeleteMenuItem(int MenuId)
-        {
-            var menuItem = context.MenuItems.Find(MenuId);
-            context.MenuItems.Remove(menuItem);
-            return context.SaveChangesAsync();
-        }
 
         public Task<int> UpdateMenu(MenuItem menuItem)
         {
@@ -90,7 +69,7 @@ namespace RobinMoses.Data
 
         public List<SpecialItem> GetSpecItem()
         {
-            return context.SpecialItems.ToList();
+            return (List<SpecialItem>)context.SpecialItems;
         }
 
         public Task<int> DeleteSpecItem(int specItemId)
